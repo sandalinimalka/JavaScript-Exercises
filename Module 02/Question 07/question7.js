@@ -7,12 +7,13 @@ function getDiceValue(diceSides) {
 const diceSidesInput = Number(prompt('Enter the number of sides: '));
 
 const results = [];
-let diceValue = getDiceValue(diceSidesInput);
-console.log(diceValue);
-while (diceValue !== diceSidesInput) {
+let diceValue;
+
+do {
+  diceValue = getDiceValue(diceSidesInput);
   console.log('Dice Value', diceValue);
   results.push(`<li>${diceValue}</li>`);
-  diceValue = getDiceValue(diceSidesInput);
 }
+while (diceValue !== diceSidesInput);
 
 document.querySelector('#dice').innerHTML = results.join('');

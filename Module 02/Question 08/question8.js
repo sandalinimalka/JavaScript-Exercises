@@ -1,13 +1,14 @@
 'use strict';
 
 const names = ['Johnny', 'DeeDee', 'Joey', 'Marky'];
-let result = '';
 
-function concat() {
-  for (let i = 0; i < names.length; i++) {
-    result += names[i];
+function concat(list) {
+  let resultStr = '';
+  for (let i = 0; i < list.length; i++) {
+    resultStr += list[i];
   }
+  return resultStr;
 }
 
-concat();
+const result = concat(names);
 document.querySelector('#result').innerHTML = result;

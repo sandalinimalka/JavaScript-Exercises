@@ -5,12 +5,12 @@ function getDiceValue() {
 }
 
 const results = [];
-let diceValue = getDiceValue();
-console.log(diceValue);
-while (diceValue !== 6) {
+let diceValue;
+
+do {
+  diceValue = getDiceValue();
   console.log('Dice Value', diceValue);
   results.push(`<li>${diceValue}</li>`);
-  diceValue = getDiceValue();
-}
+} while (diceValue !== 6);
 
 document.querySelector('#dice').innerHTML = results.join('');
